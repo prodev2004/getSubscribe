@@ -1,0 +1,71 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.form-group {
+    width: 400px;
+    height: 50px;
+    position: relative;
+    /* as default it'll be hidden */
+    transform: scaleX(0);
+    transition: 200ms ease-in-out transform;
+}
+.form-group input {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #ff0000;
+    border-radius: .5rem;
+    padding: 0 8rem 0 1rem;
+    font-size: 1rem;
+    background-color: transparent;
+    outline: none;
+    box-shadow: 0 0 .5rem rgba(255, 0, 0, .5);
+}
+button {
+    background-color: #ff0000;
+    border: none;
+    color: #fff;
+    padding: .3rem 1rem;
+    font-size: 1rem;
+    border-radius: .3rem;
+    cursor: pointer;
+    box-shadow: 0 0 .5rem rgba(255, 0, 0, .5);
+}
+button:hover {
+    background-color: rgba(255, 0, 0, .8);
+}
+
+.small-btn {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.big-btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    padding: .5rem 1rem;
+    transition: 200ms ease-in-out opacity;
+}
+
+/* these 2 classes will be added dinamically with JS based on which button we click */
+.remove-big-btn {
+    opacity: 0;
+    pointer-events: none;
+}
+.show-form-group {
+    transform: scaleX(1);
+}
